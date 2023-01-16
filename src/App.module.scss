@@ -1,0 +1,20 @@
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & button:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    .changeSize {
+        position: relative;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color: white, $alpha: 0.5);
+    }
