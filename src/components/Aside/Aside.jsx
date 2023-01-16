@@ -8,8 +8,8 @@ class Aside extends Component {
     render() {
         const {isOpen} = this.props
         return (
-            <aside className={cx("aside", {open: isOpen})} />
+            <aside className={cx("aside", { open: isOpen})} />
         )
     }
 }
-export default Aside
+export default Aside;
