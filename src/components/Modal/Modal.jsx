@@ -4,10 +4,11 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles)
 class Modal extends Component {
     render() {
-        const {isOpenModal} = this.props
+        const {isOpenModal, stopFn, closeModal} = this.props
         return (
-            <div className={cx("container", {openModal: isOpenModal})}>
-                <div className={styles.modal} />
+            <div role="button" onClick={closeModal} className={cx("container", {openModal: isOpenModal})}>
+                <div role="button" onClick={stopFn} className={styles.modal}>
+                </div>
             </div>
         )
         
