@@ -38,13 +38,18 @@ class App extends Component {
           stopFn={this.stopClick}
           placement={placement}
           closeAside={this.closeAside} />
-        <Button click={this.handleToggleAside}
-          text={isOpenAside ? "Close Aside" : "Open Aside"} />
+        <Button click={this.handleToggleAside} 
+        text={isOpenAside ? "Close Aside" : "Open Aside"} />
         <Button click={this.handleToggleModal}
-          text={isOpenModal ? "Close Modal" : "Open Modal"} />
+         text={isOpenModal ? "Close Modal" : "Open Modal"} />
+          
+       
+
         <Modal isOpenModal={isOpenModal}
           stopFn={this.stopClick}
-          closeModal={this.closeModal} />
+          closeModal={this.closeModal} >
+
+        </Modal>
       </div>
     )
 
