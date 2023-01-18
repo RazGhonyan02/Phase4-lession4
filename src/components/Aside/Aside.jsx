@@ -6,13 +6,19 @@ const cx = classNames.bind(styles)
 
 class Aside extends Component {
     render() {
-        const {isOpenAside, stopFn, closeAside, placement = "left"} = this.props
+        const { isOpenAside, stopFn, placement = "left" } = this.props
         return (
-            <div role={"button"}
-             onClick={closeAside}
-             className={cx("container", {openAside: isOpenAside})}>
-            <aside role={"button"} onClick={stopFn} className={cx("aside", {top: placement === "top", right: placement === "right", bottom: placement === "bottom"})} />
-            </div>
+                <aside
+                    role={"button"}
+                    onClick={stopFn}
+                    className={cx("aside",
+                        {
+                            openAside: isOpenAside,
+                            top: placement === "top",
+                            right: placement === "right",
+                            bottom: placement === "bottom"
+                        })}>              
+                </aside>
         )
     }
 }

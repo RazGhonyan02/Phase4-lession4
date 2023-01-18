@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles)
 class Counter extends Component {
     render() {
-        const { increment, decrement, counter, } = this.props
+        const { increment, decrement, counter } = this.props
         return (
             <div className={styles.container}>
                 <h1>Counter</h1>
