@@ -5,7 +5,7 @@ import Modal from "../../components/Modal/Modal"
 import Header from "../../components/Header/Header";
 import Aside from "../../components/Aside/Aside";
 
-class CounterP extends Component {
+class CounterPage extends Component {
     state = {
         isOpenModal: false,
         isOpenAside: false,
@@ -57,4 +57,4 @@ class CounterP extends Component {
     }
 }
 
-export default CounterP;
+export default CounterPage;

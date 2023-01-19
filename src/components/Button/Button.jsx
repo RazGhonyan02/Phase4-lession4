@@ -5,9 +5,9 @@ const cx = classNames.bind(styles)
 class Button extends Component {
     
     render() {
-        const {click, text} = this.props
+        const {click, text, type, disabled} = this.props
         return (
-            <button onClick={click} className={styles.button}>{text}</button>
+            <button disabled={disabled} type={type} onClick={click} className={styles.button}>{text}</button>
         )
     }
 }
