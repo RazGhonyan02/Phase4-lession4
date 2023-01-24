@@ -7,13 +7,11 @@ const cx = classNames.bind(styles)
 
 class Aside extends Component {
     render() {
-        const { isOpenAside, placement = "left" } = this.props
+        const { isOpenAside, onClick, placement = "left" } = this.props
         return (
             <aside
                 role={"button"}
-                onClick={(event) => {
-                    event.stopPropagation()
-                }}
+                onClick= {onClick}
                 className={cx("aside", {
                     openAside: isOpenAside,
                     top: placement === "top",

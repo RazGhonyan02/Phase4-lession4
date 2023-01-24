@@ -13,7 +13,7 @@ class Home extends Component {
         const { isOpenAside } = this.state
         this.setState({ isOpenAside: !isOpenAside })
     }
-    
+
     closeAside = () => {
         this.setState({ isOpenAside: false })
     }
@@ -23,7 +23,7 @@ class Home extends Component {
             <div className={styles.container}>
                 <Aside
                     isOpenAside={isOpenAside}
-                    stopFn={(e) => {
+                    onClick={(e) => {
                         e.stopPropagation()
                     }}
                     placement={placement}

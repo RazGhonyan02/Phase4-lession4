@@ -11,7 +11,8 @@ class SignUp extends Component {
         isLoggedin: false,
     }
     onChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value })
+        const { name, value } = event.target
+        this.setState({ [name]: value })
     }
 
     onSubmit = (event) => {
