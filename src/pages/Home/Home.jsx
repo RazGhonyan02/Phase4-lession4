@@ -1,7 +1,5 @@
 import { Component } from "react";
-import { NavLink } from "react-router-dom";
 import Aside from "../../components/Aside/Aside";
-import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.scss"
 
@@ -15,10 +13,8 @@ class Home extends Component {
         const { isOpenAside } = this.state
         this.setState({ isOpenAside: !isOpenAside })
     }
-    stopClick = (e) => {
-        e.stopPropagation()
-    }
-    closeAside = (event) => {
+
+    closeAside = () => {
         this.setState({ isOpenAside: false })
     }
     render() {
@@ -27,7 +23,9 @@ class Home extends Component {
             <div className={styles.container}>
                 <Aside
                     isOpenAside={isOpenAside}
-                    stopFn={this.stopClick}
+                    onClick={(e) => {
+                        e.stopPropagation()
+                    }}
                     placement={placement}
                     closeAside={this.closeAside} />
                 <Header click={this.handleToggleAside}></Header>

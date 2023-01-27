@@ -8,6 +8,9 @@ class Navigation extends Component {
             textDecoration: isActive ? "bold" : "none"
         }
     }
+    removeItem = () => {
+        localStorage.removeItem("token")
+    }
     render() {
         return (
             <nav className={styles.container}>
@@ -15,6 +18,12 @@ class Navigation extends Component {
                     Home</NavLink>
                 <NavLink to="/counter" className={styles.navLink}>
                     Counter</NavLink>
+                <NavLink
+                    onClick={this.removeItem}
+                    to="/login"
+                    className={styles.navLink}>
+                    Log Out
+                </NavLink>
             </nav>
         )
     }
