@@ -14,7 +14,7 @@ class Table extends Component {
                 <tbody>
                     {data.map((item, index) =>
                         <tr key={index}>
-                            {columns.map((column, index) =>
+                            {columns.map((_, index) =>
                                 <td
                                     className={styles.border}
                                     key={index}>

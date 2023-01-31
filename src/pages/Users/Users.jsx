@@ -3,7 +3,9 @@ import { API } from "../../api";
 import Aside from "../../components/Aside/Aside";
 import Header from "../../components/Header/Header"
 import Table from "../../components/Table/Table";
+import { userColumns } from "./constants";
 import styles from "./Users.module.scss"
+import { getUsersMap } from "./utils";
 
 
 class Users extends Component {
@@ -14,6 +16,7 @@ class Users extends Component {
     }
     async componentDidMount() {
         this.getUsers()
+        this.postUsers()
     }
     getUsers = async () => {
         const users = await API.user.getUsers()
@@ -23,47 +26,21 @@ class Users extends Component {
         const posts = await API.post.postUsers()
         this.setState({ posts })
     }
-    userColumns = [
-        {
-            Header: "Id",
-            accessor: "col1"
-        },
-        {
-            Header: "Email",
-            accessor: "col2"
-        },
-        {
-            Header: "Name",
-            accessor: "col3"
-        },
-        {
-            Header: "User Name",
-            accessor: "col4"
-        },
-        {
-            Header: "WebSite",
-            accessor: "col5"
-        },
-        {
-            Header: "Phone",
-            accessor: "col6"
-        },
-    ]
     postsColumns = [
         {
-            Header: "Id",
+            Header: "User Id",
             accessor: "col1",
         },
         {
-            Header: "User Id",
+            Header: "Id",
             accessor: "col2",
         },
         {
-            Header: "Body",
+            Header: "Title",
             accessor: "col3",
         },
         {
-            Header: "Title",
+            Header: "Body",
             accessor: "col4",
         },
 
@@ -74,22 +51,14 @@ class Users extends Component {
     }
     render() {
         const { isOpenAside, users, posts} = this.state
-        const usersData = users.map(({id, email, name, username, website, phone}) => ({
-            col1: id,
-            col2: email,
-            col3: name,
-            col4: username,
-            col5: website,
-            col6: phone
-        }))
+        
 
-        const postsData = posts.map(({id, userId, body, title}) => ({
-           col1: id,
-           col2: userId,
-           col3: body,
-           col4: title 
+        const postsData = posts.map(({userId, id, title, body}) => ({
+           col1: userId,
+           col2: id,
+           col3: title,
+           col4: body 
         }))
-        console.log(usersData)
         return (
             <div className={styles.container}>
                 <div className={styles.headerCont}>
@@ -102,10 +71,9 @@ class Users extends Component {
                     <Header click={this.handleToggleAside} />
                 </div>
                 <div className={styles.tableCont}>
-                    <Table columns={this.userColumns} data={usersData}/>
+                    <Table columns={userColumns} data={getUsersMap(users)}/>
                     <Table columns={this.postsColumns} data={postsData} />
                 </div>
-
             </div>
 
         )
