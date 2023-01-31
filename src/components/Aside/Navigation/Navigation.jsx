@@ -24,6 +24,8 @@ class Navigation extends Component {
                     className={styles.navLink}>
                     Log Out
                 </NavLink>
+                <NavLink to="/users" className={styles.navLink}>
+                    Users</NavLink>
             </nav>
         )
     }

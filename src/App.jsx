@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login/Login";
 import SignUp from "./pages/auth/SignUp/SignUp";
 import PrivateRoute from "./components/routs/PrivateRoute"
 import PublicRoute from "./components/routs/PublicRoute";
+import Users from "./pages/Users/Users";
 const token = localStorage.getItem("token")
 
 class App extends Component {
@@ -25,6 +26,9 @@ class App extends Component {
           <Route
             path="/sign-up" 
             element={<PublicRoute><SignUp /></PublicRoute>} />
+            <Route
+            path="/users"
+            element={<PrivateRoute><Users /></PrivateRoute>} />
         </Routes>
       </BrowserRouter>
     )
