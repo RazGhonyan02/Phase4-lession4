@@ -1,6 +1,6 @@
 import axios from "./axios";
 
-export const getUsers = async() => axios({
+export const getUser = async(id) => axios({
     method: "GET",
-    url: "users"
+    url: `/users/${id}`
 })

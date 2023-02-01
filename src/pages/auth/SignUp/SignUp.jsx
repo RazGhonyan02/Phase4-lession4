@@ -2,6 +2,7 @@ import { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
+import { withRouter } from "../../../hocs/withRouter";
 import styles from "./SignUp.module.scss"
 const users = []
 class SignUp extends Component {
@@ -17,9 +18,11 @@ class SignUp extends Component {
 
     onSubmit = (event) => {
         const { login, password } = this.state
+        const { navigate } = this.props
         event.preventDefault()
         users.push({ name: login, password: password })
         localStorage.setItem("user", JSON.stringify(users))
+        navigate("/login")
     }
 
     render() {
@@ -58,4 +61,4 @@ class SignUp extends Component {
         )
     }
 }
-export default SignUp;
+export default withRouter(SignUp);

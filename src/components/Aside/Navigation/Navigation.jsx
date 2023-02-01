@@ -18,14 +18,15 @@ class Navigation extends Component {
                     Home</NavLink>
                 <NavLink to="/counter" className={styles.navLink}>
                     Counter</NavLink>
+                <NavLink to="/users" className={styles.navLink}>
+                    Users</NavLink>
                 <NavLink
                     onClick={this.removeItem}
                     to="/login"
                     className={styles.navLink}>
                     Log Out
                 </NavLink>
-                <NavLink to="/users" className={styles.navLink}>
-                    Users</NavLink>
+
             </nav>
         )
     }
