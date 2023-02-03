@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <header className={styles.header}>
                 <div onClick={click} role="button" className={styles.burger}>
-                    <span></span>
+                    <span />
                 </div>
             </header>
         )

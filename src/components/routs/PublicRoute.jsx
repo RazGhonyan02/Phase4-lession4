@@ -1,16 +1,21 @@
 import { Component } from "react";
 import { Navigate } from "react-router-dom";
+import { Consumer } from "../../context/AuthContext";
 
 class PublicRoute extends Component {
     render() {
-        const { children } = this.props
-        const token = localStorage.getItem("token")
-        if (token) {
-            return <Navigate  to="/"/>
-        }
-        return children;
-            
-        
+        return (
+            <Consumer>
+                {({ token }) => {
+                    const { children } = this.props
+                    if (token) {
+                        return <Navigate to="/" />
+                    }
+                    return children;
+                }}
+            </Consumer>
+        )
+
     }
 }
 export default PublicRoute;
