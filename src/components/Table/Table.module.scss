@@ -6,4 +6,12 @@
 }
 .border {
     border: 2px solid black;
+    padding: 15px;
+   
+}
+tr:hover {
+    background-color: gray;
+}
+.pointer {
+    cursor: pointer;
 }

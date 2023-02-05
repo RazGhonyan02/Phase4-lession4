@@ -6,8 +6,6 @@ const cx = classNames.bind(styles)
 class Modal extends Component {
     state = {
         counter: 0,
-
-
     }
     incrementClick = () => {
         const { counter } = this.state

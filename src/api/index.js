@@ -1,4 +1,4 @@
+import * as users from "./users"
 import * as user from "./user"
-import * as post from "./post"
 
-export const API = { user, post };
+export const API = { users, user };

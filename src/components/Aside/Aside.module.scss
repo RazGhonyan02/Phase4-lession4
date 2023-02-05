@@ -1,27 +1,14 @@
-
 .aside {
     display: none;
     width: 200px;
-    height: 100vh;
+    height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.4)
 }
 
 .openAside {
     display: block;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: rgba($color: #000000, $alpha: 0.4)
 }
-.top {
-    width: 100%;
-    height: 200px;
-    left: 0;
-    top: 0;
-}
-.right {
-    width: 300px;
-    height: 100vh;
-    right: 0;
-}
-.bottom {
-    width: 100%;
-    height: 200px;
-    bottom: 0;
-}
+
