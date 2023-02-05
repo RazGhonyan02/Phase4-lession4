@@ -2,7 +2,10 @@ import { Component } from "react";
 import { Provider } from "./index"
 class AuthProvider extends Component {
     state = {
-        token: localStorage.getItem("token")
+        token: null
+    }
+    componentDidMount() {
+       this.setState({token: localStorage.getItem("token")})
     }
     handleLogout = () => {
         localStorage.removeItem("token");
