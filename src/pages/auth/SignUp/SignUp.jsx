@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "../../../components/Button/Button";
-import Input from "../../../components/Input/Input";
+import Button from "../../../ui-kit/components/Button/Button";
+import Input from "../../../ui-kit/components/Input/Input";
 import { withRouter } from "../../../hocs/withRouter";
 import styles from "./SignUp.module.scss"
 const users = []

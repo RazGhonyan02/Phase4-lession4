@@ -12,25 +12,27 @@ class Navigation extends Component {
     }
     render() {
         return (
-           <Consumer>
-            {({ handleLogout }) => (
-                 <nav className={styles.container}>
-                 <NavLink to="/" className={styles.navLink}>
-                     Home</NavLink>
-                 <NavLink to="/counter" className={styles.navLink}>
-                     Counter</NavLink>
-                 <NavLink to="/users" className={styles.navLink}>
-                     Users</NavLink>
-                 <NavLink
-                     onClick={handleLogout}
-                     to="/login"
-                     className={styles.navLink}>
-                     Log Out
-                 </NavLink>
- 
-             </nav>
-            )}
-           </Consumer>
+            <Consumer>
+                {({ handleLogout }) => (
+                    <nav className={styles.container}>
+                        <NavLink to="/" className={styles.navLink}>
+                            Home</NavLink>
+                        <NavLink to="/counter" className={styles.navLink}>
+                            Counter</NavLink>
+                        <NavLink to="/users" className={styles.navLink}>
+                            Users</NavLink>
+                        <NavLink to="/todo" className={styles.navLink}>
+                            To Do List</NavLink>
+                        <NavLink
+                            onClick={handleLogout}
+                            to="/login"
+                            className={styles.navLink}>
+                            Log Out
+                        </NavLink>
+
+                    </nav>
+                )}
+            </Consumer>
         )
     }
 }

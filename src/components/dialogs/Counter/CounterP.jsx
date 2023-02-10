@@ -1,7 +1,7 @@
 import { Component } from "react";
-import Button from "../../components/Button/Button";
+import Button from "../../../ui-kit/components/Button/Button"
 import styles from "./CounterP.module.scss"
-import Modal from "../../components/Modal/Modal"
+import Modal from "../../Modal/Modal"
 
 class CounterPage extends Component {
     state = {

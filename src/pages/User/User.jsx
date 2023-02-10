@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { API } from "../../api";
 import { withRouter } from "../../hocs/withRouter";
-// import { getUserMap }  from "./utils" 
 import styles from "./User.module.scss"
 
 class User extends Component {
